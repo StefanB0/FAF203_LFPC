@@ -2,8 +2,7 @@ module com.lfpc.lfpc_code {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.json;
-    requires org.jgrapht.core;
-    requires org.jgrapht.io;
+    requires guru.nidi.graphviz;
 
 
     opens com.lfpc.lfpc_code to javafx.fxml;
