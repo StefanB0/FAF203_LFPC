@@ -40,6 +40,9 @@ const (
 	PROGRAM  = "PROGRAM"
 	FUNCTION = "FUNCTION"
 	RENAME   = "RENAME"
+	MOVE 	 = "MOVE"
+	READ 	 = "READ"
+	WEIGHT 	 = "WEIGHT"
 	LET      = "LET"
 	TRUE     = "TRUE"
 	FALSE    = "FALSE"
@@ -57,6 +60,9 @@ var keywords = map[string]TokenType{
 	"Program": 	PROGRAM,
 	"function": FUNCTION,
 	"rename": 	RENAME,
+	"move": 	MOVE,
+	"read": 	READ,
+	"weight": 	WEIGHT,
 	"let":    	LET,
 	"true":   	TRUE,
 	"false":  	FALSE,
