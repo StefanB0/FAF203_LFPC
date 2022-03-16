@@ -8,7 +8,7 @@ import (
 
 func main(){
 
-	input, _ := os.ReadFile("output/example.txt")
+	input, _ := os.ReadFile("input/example.txt")
 	l := lexer.New(string(input))
 
 	for i := 0; i < 33; i++ {

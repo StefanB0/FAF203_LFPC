@@ -7,7 +7,7 @@ import (
 
 func TestLexer(t *testing.T) {
 
-	input, _ := os.ReadFile("../output/example.txt")
+	input, _ := os.ReadFile("../input/example.txt")
 	l := New(string(input))
 
 	tests := []struct {

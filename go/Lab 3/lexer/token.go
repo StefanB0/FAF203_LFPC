@@ -77,10 +77,3 @@ var keywords = map[string]Tokentype{
 	"else":   	ELSE,
 	"return": 	RETURN,
 }
-
-// func GetKeyword(id string) Tokentype {
-// 	if tok, ok := keywords[id]; ok {
-// 		return tok
-// 	}
-// 	return IDENTIFIER
-// }
