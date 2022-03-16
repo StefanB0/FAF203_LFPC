@@ -7,7 +7,7 @@ import (
 
 func TestLexer(t *testing.T) {
 
-	input, _ := os.ReadFile("output/example.txt")
+	input, _ := os.ReadFile("../output/example.txt")
 	l := New(string(input))
 
 	tests := []struct {
@@ -54,15 +54,15 @@ func TestLexer(t *testing.T) {
 		tk:= l.NextToken()
 
 		if tk.Type != test.expectedType {
-			t.Fatalf("Test %d failed. Expected %q but got %q", i+1, test.expectedType, tk.Type)
+			t.Fatalf("Test Type %d failed. Expected %q but got %q", i+1, test.expectedType, tk.Type)
 		}
 
 		if tk.Value != test.expectedValue {
-			t.Fatalf("Test %d failed. Expected %q but got %q", i+1, test.expectedValue, tk.Value)
+			t.Fatalf("Test Value %d failed. Expected %q but got %q", i+1, test.expectedValue, tk.Value)
 		}
 
 		if tk.Line != test.expectedLine {
-			t.Fatalf("Test %d failed. Expected %q but got %q", i+1, test.expectedLine, tk.Line)
+			t.Fatalf("Test line %d failed. Expected %q but got %q", i+1, test.expectedLine, tk.Line)
 		}
 	}
 }

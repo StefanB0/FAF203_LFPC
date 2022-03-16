@@ -4,8 +4,6 @@ import (
 	"strings"
 )
 
-//TODO detect illegal float and integers with letters and symbols
-
 type Lexer struct {
 	input 		string
 	ch 			byte
@@ -39,16 +37,11 @@ func (l *Lexer) getstring() {
 	l.tok.Line = l.line
 
 	for l.input[l.peekpointer] != '"'{
-		// if l.input[l.peekpointer] == 0{
-		// 	l.tok.Type = ILLEGAL
-		// 	break
-		// }
 		l.peekpointer++
 	}
 
 	l.tok.Value = l.input[l.pointer : l.peekpointer]
 
-	l.peekpointer++
 	l.pointer = l.peekpointer
 }
 
@@ -58,8 +51,10 @@ func (l *Lexer) getnumber() {
 		l.peekpointer++
 	}
 
+
 	l.tok.Value = l.input[l.pointer : l.peekpointer]
 	l.tok.Line = l.line
+	l.pointer = l.peekpointer
 
 	nr:= l.tok.Value
 
@@ -82,7 +77,11 @@ func isDigit(ch byte) bool {
 func (l *Lexer) advance() {
 	l.pointer++
 	l.peekpointer++
+	if l.pointer >= len(l.input) {
+		l.ch = 0
+	} else {
 	l.ch = l.input[l.pointer]
+	}
 }
 
 func (l *Lexer) peek() byte{
@@ -90,13 +89,21 @@ func (l *Lexer) peek() byte{
 }
 
 func (l *Lexer) skipWhitespaces() {
+	if l.pointer >= len(l.input) {
+		return
+	}
+
 	for l.input[l.pointer] == ' '|| l.input[l.pointer] == '\t' || l.input[l.pointer] == '\n' || l.input[l.pointer] == '\r' {
 		if l.input[l.pointer] == '\n'{
 			l.line++
 		}
 
 		l.advance()
+		if l.pointer >= len(l.input) {
+			return
+		}
 	}
+
 }
 
 func (l *Lexer) NextToken() Token {
