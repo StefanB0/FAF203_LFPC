@@ -1,0 +1,10 @@
+function appendlazy(x){
+		return x = "lazy" + x;
+	}
+
+	Program{
+
+	let filename = "file.txt";
+
+	rename(filename, appendlazy(filename));
+}
