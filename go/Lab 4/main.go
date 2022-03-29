@@ -24,4 +24,5 @@ func main(){
 		}}
 
 	g = lib.Convert(g)
+	g.Print()
 }
