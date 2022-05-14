@@ -232,7 +232,10 @@ func makeTable(vn, vt []string) [][][]string {
 }
 
 func (ll1m *LL1Matrix) AnalyzeWord(s string) {
+	pointer:= "S"
+	derivation:= "S"
 
+	
 }
 
 func (ll1m *LL1Matrix) fillTable(g Grammar) {
