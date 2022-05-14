@@ -2,6 +2,7 @@ package lib
 
 import (
 	"fmt"
+	"strings"
 )
 
 type LL1Matrix struct {
@@ -231,11 +232,22 @@ func makeTable(vn, vt []string) [][][]string {
 	return table
 }
 
-func (ll1m *LL1Matrix) AnalyzeWord(s string) {
-	pointer:= "S"
+func (ll1m *LL1Matrix) AnalyzeWord(s string, g Grammar) {
+	// pointer:= 0
 	derivation:= "S"
 
-	
+	// for pointer < len(s) {
+
+	// 	if ContainsElement(derivation[pointer:pointer+1], g.Vt) != -1 {
+	// 		pointer++
+	// 	} else {
+	// 		vnn := ContainsElement(derivation[pointer:pointer+1], g.Vn)
+	// 		vtt := ContainsElement(s[pointer:pointer+1], g.Vt)
+	// 		ll1m.precedenceTable[vnn][vtt]
+	// 	}
+	// }
+
+	fmt.Println(derivation)
 }
 
 func (ll1m *LL1Matrix) fillTable(g Grammar) {

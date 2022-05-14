@@ -22,6 +22,6 @@ func main(){
 	LL1:= lib.LL1Matrix{}
 	LL1.Run(g)
 	LL1.Print()
-	LL1.AnalyzeWord(s)
+	LL1.AnalyzeWord(s, g)
 
 }
